@@ -1,0 +1,2 @@
+CPU Usage	Memory Usage	Unused Disk Space	Packets rec. /Request sent
+S[100-97]%		S(free -m | grep ^Mem | awk '{print  MB}')		11G			35028/20809
