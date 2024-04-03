@@ -5,7 +5,7 @@
 set -o errexit
 
 echo "You are about to view key system info"
-sleep 3
+sleep 2 
 
 sysFile="sysinfo.txt"
 
@@ -13,21 +13,21 @@ echo "copy of the system details will be saved in $sysFile."
 
 # checking for cpu_usage
 echo checking cpu usage...
-sleep 3
-cpu_usage="S[100-$(vmstat 1 2 | tail -1 | awk '{print $15}')]%"
+sleep 2
+cpu_usage="$[100-$(vmstat 1 2 | tail -1 | awk '{print $15}')]%"
 echo checking cpu usage done
 echo
 
 # checking for mem_usage
 echo checking memory usage...
-sleep 3
-mem_usage="S(free -m | grep ^Mem | awk '{print $3 "MB"}')"
+sleep 2
+mem_usage="$(free -m | grep ^Mem | awk '{print $3 "MB"}')"
 echo  checking memory usage done
 echo
 
 # checking disk space
 echo checking disk space...
-sleep 3
+sleep 2
 disk_space="$(df -h | grep /$ | awk '{print $4}')"
 echo checking disk space done
 echo
